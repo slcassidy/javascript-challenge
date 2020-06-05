@@ -32,6 +32,8 @@ var button = d3.select("#filter-btn");
 var tbody = d3.select("tbody");
 
 
+
+
  //create action when button clicked 
   button.on("click", function() {
 
@@ -51,12 +53,15 @@ var tbody = d3.select("tbody");
 
     console.log(filteredData_date);
 
-      // First, create an array with just the datetime filtered values
-    //var search_ufo_datatime = filteredData_date.map(tableData => tableData.datetime);
-   // filteredData_date.forEach
 
+    //Add an attribute so that it will clear the page as the tbody did not work
+    tbody.attr("class", "UFO_info_list")
+
+          // Then, select the unordered list element by class name
+    var list = d3.select(".UFO_info_list");
      // remove any children from the list to
-    //filteredData_date.html("");
+    list.html("");
+    //add class attribute
 
  //loop through the data set into a table
     filteredData_date.forEach((UFOinfo) => {
